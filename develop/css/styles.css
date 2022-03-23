@@ -1,0 +1,30 @@
+.bg-primary {
+    background-color: #3399CC !important;
+  }
+
+  #infograhp{
+    height: 10rem;
+    background-color: orange !important;
+    padding-left: 60rem;
+  }
+  #infograph{
+    height: auto;
+    background-color: blue !important;
+  }
+
+  .btn{
+        font-size: 1.3rem;
+        padding: 2rem;
+        margin: 2rem;
+  }
+  #daily{
+      height: auto;
+      background-color:brown;
+  }
+
+  #day{
+      padding: 2rem;
+      height: auto;
+      margin: .5rem;
+      background-color: aquamarine;
+  }
