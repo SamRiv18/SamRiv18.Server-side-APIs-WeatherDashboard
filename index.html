@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-sm-2 d-grid ">
                 <h1 class="searchCity">Search for a City</h1>
-                <input type="text" class="form-control form-control-lg" placeholder="City">
+                <input id="userSearch-city"type="text" class="form-control form-control-lg" placeholder="City">
                 <button type="button" class="btn btn-primary btn-block">Search</button>
                 <button type="button" class="btn btn-primary btn-block">Search</button>
                 <button type="button" class="btn btn-primary btn-block">Search</button>
@@ -31,45 +31,29 @@
                 </div>
                 <div id="infograph" class="col-sm-12 d-grid p-4">
                     <h1 class="forcast">5-Day Forcast</h1>
-                    <div id="daily" class="row g-2">
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div id="day" class="col-sm">
-                                        Monday hsgdfjhgasdjhfgjhsdgfjhdsgfhjdsgfjhdsgfhjdgfjhasdgjgfjhsdagfjsdhg
-                                        fjdsgfgfdsahjkgf
-                                        j
-                                        ks
-                                        dhagfhjdkfhjdhfjkdhfjdhfkjdshfkjdhfkjhdskjfhkjdshfk
-                                        jdshfkjhsdjkfhjksdhfkjdhfhdskjhfkdhfkjhj
-                                        sdgfjdsgfjhsd
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Tuesday
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Wed
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Thur
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Fri
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Sat
-                                    </div>
-                                    <div id="day" class="col-sm">
-                                        Sun
-                                    </div>
-                                </div>
+                    <div class="weather row gx-2">
+                        <div class="card" style="width: 30rem">
+                            <h5 class="card-title p-2">Date</h5>
+                            <img src="http://openweathermap.org/img/wn/10d@4x.png" class="card-img-top" alt="Weather Description">
+                            <div class="card-body">
+                                <h3 class="card-title">Weather Label</h3>
+                                <p class="card-text">High Temp Low Temp</p>
+                                <p class="card-text">HighFeels Like</p>
+                                <p class="card-text">Pressure</p>
+                                <p class="card-text">Humidity, uvindex, pop</p>
+                                <p class="card-text">UIV Index</p>
+                                <p class="card-text">Precipitation</p>
+                                <p class="card-text">Dew Point</p>
+                                <p class="card-text">Wind speed and Direction</p>
+                                <p class="card-text">Sunrise</p>
+                                <p class="card-text">Sunset</p>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
       </div>
+      <script src="/develop/js/script.js"></script>
 </body>
 </html>
