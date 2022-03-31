@@ -6,10 +6,12 @@
     height: 10rem;
     background-color: orange !important;
     padding-left: 60rem;
+    width: fit-content;
   }
   #infograph{
     height: auto;
     background-color: blue !important;
+    width: fit-content;
   }
 
   .btn{
@@ -27,4 +29,9 @@
       height: auto;
       margin: .5rem;
       background-color: aquamarine;
+  }
+
+  .card{
+    border: solid .2rem grey;
+    margin:2rem
   }
