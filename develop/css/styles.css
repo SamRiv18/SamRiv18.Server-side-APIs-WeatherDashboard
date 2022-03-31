@@ -15,9 +15,10 @@
   }
 
   .btn{
-        font-size: 1.3rem;
-        padding: 2rem;
-        margin: 2rem;
+      font-size: 1.3rem;
+      padding: .5rem;
+      margin: .5rem;
+      width: -webkit-fill-available;
   }
   #daily{
       height: auto;
@@ -33,5 +34,9 @@
 
   .card{
     border: solid .2rem grey;
-    margin:2rem
+    margin:2rem;
+  }
+
+  #sideBar{
+    align-content: center;
   }

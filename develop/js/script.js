@@ -1,15 +1,37 @@
+dayjs.extend(window.dayjs_plugin_utc);
+dayjs.extend(window.dayjs_plugin_timezone);
 
 var userSearch = [];
 var APIKey= 'a12c8ed33df1450f8eb9318841d28b8e';
 var weatherApiUrl= 'https://api.openweathermap.org';
 
 var city = document.querySelector('#userSearch-city');
+var searchClick = document.querySelector('#sideBar')
+var formEL = document.querySelector('#form');
+var displayHistory = document.querySelector('#history-list')
 
+listenForSubmit = (e) =>{
+    if(!city.value) {
+        return console.log("no input")
+    } 
+    e.preventDefault();
+        var search = city.value.trim();
+        fetchCoordinates(search);
+        city.value = '';    
+}
 
+btnClick = (e) =>{
+    if(!e.target.matches('.btn-history')){
+        return console.log("no input button")
+    }
+        var btn = e.target;
+        var search = btn.getAttribute('search-history');
+        fetchCoordinates(search)  
+}
 
 fetchWeather = (location) => {
-    var  lat  = 33.753746;
-    var  lon  =  -84.386330;
+    var { lat } = location;
+    var { lon } =  location;
     var units = 'imperial'
     var apiURL = `${weatherApiUrl}/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&exclude=minutely,hourly&appid=${APIKey}`
 
@@ -26,39 +48,37 @@ fetchWeather = (location) => {
         });
 }           
 
-renderHistory = (city,data)=> {
+historyList = (city,data) => {
     showWeather(city,data.current,data.timezone)
     showWeeklyWeather(dailyForecast[i],timezone)
 }
 
-fetchCoordinates = (search) =>{
-    var apiUrl = `${weatherApiUrl}/geo/1.0/direct?q=${search}&limit=5&appid=${ApiKey}`;
-
+fetchCoordinates = (search) => {
+    var apiUrl = `${weatherApiUrl}/geo/1.0/direct?q=${search}&limit=5&appid=${APIKey}`;
+    
     fetch(apiUrl)
         .then((res) => {
+            console.log(res);
             return res.json();
+            
         })
-        .then((data)=>{
+        .then((data) => {
             if (!data[0]){
                 alert('Location not found')
             }
             else{
-                appendToHistory(search);
+                //appendToHistory(search);
                 fetchWeather(data[0]);
             }
         })
-        .catch ((err)=>{
+        .catch ((err) => {
             console.log(err);
         })
 }
 
-
-
 showWeather = (response)=>{
-    console.log(response)
-
     var row = document.querySelector('.weather.row');
-    
+    row.style.display="";
     row.innerHTML = response.daily.map(day =>{
         var dateTime = new Date(day.dt * 1000);//change this format
         return `<div class="card" style="width: 10rem">
@@ -74,4 +94,5 @@ showWeather = (response)=>{
     }).join('');
 }
 
-fetchWeather();
+formEL.addEventListener('submit', listenForSubmit);
+searchClick.addEventListener('click', btnClick);

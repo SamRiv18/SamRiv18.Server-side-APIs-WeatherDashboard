@@ -16,14 +16,13 @@
     </div>
       <div class="container-fluid ">
         <div class="row">
-            <div class="col-sm-2 d-grid ">
+            <div id="sideBar" class="col-sm-2  ">
                 <h1 class="searchCity">Search for a City</h1>
-                <input id="userSearch-city"type="text" class="form-control form-control-lg" placeholder="City">
-                <button type="submit" class="btn btn-primary btn-block">Sub</button>
-                <button type="button" class="btn btn-primary btn-block">Search</button>
-                <button type="button" class="btn btn-primary btn-block">Search</button>
-                <button type="button" class="btn btn-primary btn-block">Search</button>
-                <button type="button" class="btn btn-primary btn-block">Search</button>
+                <form id="form">
+                <input id="userSearch-city" type="text" class="form-control form-control-lg" placeholder="City" aria-labelledby="form-heading" aria-controls="today forecast">
+                <button type="submit" class="btn btn-primary btn-block" aria-label="submit search">Sub</button>
+                </form>
+                <div class="list-group" id="history-list"></div>
             </div>
             <div class="col p-3">
                 <div id="infograhp" class="col-sm-12 d-grid p-4">
@@ -31,8 +30,8 @@
                 </div>
                 <div id="infograph" class="col-sm-12 d-grid p-4">
                     <h1 class="forcast">5-Day Forcast</h1>
-                    <div class="weather row gx-2">
-                        <div  class="card" style="width: 30rem">
+                    <div class="weather row gx-2" style="display:none">
+                        <div  class="card" style="width: 30rem" >
                             <h5 class="card-title p-2">Date</h5>
                             <img src="http://openweathermap.org/img/wn/10d@4x.png" class="card-img-top" alt="Weather Description">
                             <div class="card-body">
@@ -54,6 +53,21 @@
             </div>
         </div>
       </div>
+      <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js"
+      integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg=="
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/utc.min.js" 
+      integrity="sha512-m00bfmYnAl3plEBlQfeQUhw/U2uvmw29V2+jxSWpAjankMWS+zAsjezbKWDEJNXqWq9o9qQZSOiA2RKDpa4D5w==" 
+      crossorigin="anonymous"
+    ></script>
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/plugin/timezone.min.js" 
+      integrity="sha512-pslqxxHAYPCxaSeFSmXXxDkLejD5dbFVC66aiVq0z4v7VTJBU+wqcG1OpNh4p3MjS2D6NCwz/H2QmSc7dXxryg==" 
+      crossorigin="anonymous"
+    ></script>
       <script src="/develop/js/script.js"></script>
 </body>
 </html>
